@@ -1,0 +1,12 @@
+[submodule "lib/llu"]
+	path = lib/llu
+	url = https://github.com/Nikos1001/llu.git
+[submodule "lib/glew"]
+	path = lib/glew
+	url = https://github.com/omniavinco/glew-cmake
+[submodule "lib/glfw"]
+	path = lib/glfw
+	url = https://github.com/glfw/glfw
+[submodule "lib/cglm"]
+	path = lib/cglm
+	url = https://github.com/recp/cglm.git
