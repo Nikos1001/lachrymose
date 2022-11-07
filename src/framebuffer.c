@@ -11,6 +11,7 @@ void lms_initFramebuffer(lms_framebuffer* fb, int w, int h, int attachments, lms
     fb->nAttachments = attachments;
     for(int i = 0; i < attachments; i++) {
         lms_initTexture(&fb->attachments[i].tex);
+        lms_filtering(&fb->attachments[i].tex, false);
         fb->attachments[i].tex.w = w;
         fb->attachments[i].tex.h = h;
         GLenum attachment;
@@ -71,7 +72,7 @@ void lms_resizeFramebuffer(lms_framebuffer* fb, int w, int h) {
 
 void lms_resizeFramebufferToWindow(lms_framebuffer* fb, lms_window* win) {
     lms_windowSize size = lms_getViewportSize(win);
-    if(size.w != fb->w && size.h != fb->h) {
+    if(size.w != fb->w || size.h != fb->h) {
         lms_resizeFramebuffer(fb, size.w, size.h);
     }
 }

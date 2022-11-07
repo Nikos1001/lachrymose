@@ -32,6 +32,7 @@ void lms_uploadTexture(lms_texture* tex) {
             type = GL_UNSIGNED_INT_24_8;
         }
     } 
+    glBindTexture(GL_TEXTURE_2D, tex->texture);
     glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, tex->w, tex->h, 0, format, type, tex->data);
     glGenerateMipmap(GL_TEXTURE_2D);
 }
