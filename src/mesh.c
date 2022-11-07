@@ -35,8 +35,8 @@ void lms_uploadMesh(lms_mesh* mesh) {
 }
 
 void lms_renderMesh(lms_mesh* mesh) {
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mesh->ebo);
     glBindVertexArray(mesh->vao);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mesh->ebo);
     glDrawElements(GL_TRIANGLES, mesh->tris * 3, GL_UNSIGNED_INT, 0);
 }
 
