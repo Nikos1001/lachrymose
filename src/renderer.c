@@ -3,7 +3,7 @@
 #include "gl.h"
 
 void lms_beginFrame() {
-
+    glEnable(GL_DEPTH_TEST);
 }
 
 void lms_endFrame() {
