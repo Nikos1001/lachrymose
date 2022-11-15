@@ -15,6 +15,9 @@ void lms_unloadShader(lms_shader* shader);
 
 int lms_uniformLocation(lms_shader* shader, const char* name);
 void lms_setIntUniform(lms_shader* shader, const char* name, int val);
+void lms_setFloatUniform(lms_shader* shader, const char* name, float val);
+void lms_setVec2Uniform(lms_shader* shader, const char* name, vec2 val);
+void lms_setVec3Uniform(lms_shader* shader, const char* name, vec3 val);
 void lms_setMat4Uniform(lms_shader* shader, const char* name, mat4 val);
 
 #endif

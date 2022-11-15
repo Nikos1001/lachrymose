@@ -40,3 +40,7 @@ lms_windowSize lms_getViewportSize(lms_window* win) {
     size.h = (float)size.h * xScale;
     return size;
 }
+
+void lms_windowTitle(lms_window* win, const char* title) {
+    glfwSetWindowTitle(win->win, title);
+}

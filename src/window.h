@@ -20,5 +20,6 @@ typedef struct {
 
 lms_windowSize lms_getWindowSize(lms_window* win);
 lms_windowSize lms_getViewportSize(lms_window* win);
+void lms_windowTitle(lms_window* win, const char* title);
 
 #endif

@@ -26,6 +26,18 @@ void lms_uploadTexture(lms_texture* tex) {
             type = GL_UNSIGNED_BYTE;
             break;
         }
+        case LMS_FORMAT_FLOAT_RGBA: {
+            internalFormat = GL_R11F_G11F_B10F;
+            format = GL_RGBA;
+            type = GL_FLOAT;
+            break;
+        }
+        case LMS_FORMAT_FLOAT16_RGBA: {
+            internalFormat = GL_RGBA16F;
+            format = GL_RGBA;
+            type = GL_FLOAT;
+            break;
+        }
         case LMS_FORMAT_DEPTH_STENCIL: {
             internalFormat = GL_DEPTH24_STENCIL8;
             format = GL_DEPTH_STENCIL;
@@ -46,8 +58,26 @@ void lms_useTexture(lms_texture* tex, int slot) {
     glBindTexture(GL_TEXTURE_2D, tex->texture);
 }
 
-void lms_filtering(lms_texture* tex, bool filter) {
+void lms_filtering(lms_texture* tex, lms_filterType filter) {
     glBindTexture(GL_TEXTURE_2D, tex->texture);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filter ? GL_LINEAR_MIPMAP_LINEAR : GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filter ? GL_LINEAR : GL_NEAREST);
+    GLenum minFilter, magFilter;
+    switch(filter) {
+        case LMS_FILTER_POINT: {
+            minFilter = GL_NEAREST;
+            magFilter = GL_NEAREST;
+            break;
+        }
+        case LMS_FILTER_LINEAR: {
+            minFilter = GL_LINEAR_MIPMAP_LINEAR;
+            magFilter = GL_LINEAR;
+            break;
+        }
+        case LMS_FILTER_LINEAR_NO_MIPMAP: {
+            minFilter = GL_LINEAR;
+            magFilter = GL_LINEAR;
+            break;
+        }
+    }
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, minFilter);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, magFilter);
 }

@@ -4,14 +4,18 @@
 
 #include "texture.h"
 #include "window.h"
+#include "lms.h"
 
 typedef enum {
     LMS_COLOR_ATTACHMENT,
+    LMS_FLOAT_COLOR_ATTACHMENT,
+    LMS_FLOAT16_COLOR_ATTACHMENT,
     LMS_DEPTH_STENCIL_ATTACHMENT
 } lms_framebufferAttachmentType;
 
 typedef struct {
     lms_texture tex;
+    unsigned int attachment;
 } lms_framebufferAttachment;
 
 typedef struct {

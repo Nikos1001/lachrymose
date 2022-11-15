@@ -59,6 +59,21 @@ void lms_setIntUniform(lms_shader* shader, const char* name, int val) {
     glUniform1i(loc, val);
 }
 
+void lms_setFloatUniform(lms_shader* shader, const char* name, float val) {
+    int loc = lms_uniformLocation(shader, name);
+    glUniform1f(loc, val);
+}
+
+void lms_setVec2Uniform(lms_shader* shader, const char* name, vec3 val) {
+    int loc = lms_uniformLocation(shader, name);
+    glUniform2f(loc, val[0], val[1]);
+}
+
+void lms_setVec3Uniform(lms_shader* shader, const char* name, vec3 val) {
+    int loc = lms_uniformLocation(shader, name);
+    glUniform3f(loc, val[0], val[1], val[2]);
+}
+
 void lms_setMat4Uniform(lms_shader* shader, const char* name, mat4 val) {
     int loc = lms_uniformLocation(shader, name);
     glUniformMatrix4fv(loc, 1, GL_FALSE, (float*)val);

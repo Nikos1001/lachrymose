@@ -7,6 +7,8 @@
 extern void (*lms_errorCallback)(const char*);
 void lms_error(const char* fmt, ...);
 
+extern float lms_dt;
+
 extern void* (*lms_realloc)(void* ptr, size_t oldSize, size_t newSize);
 void* lms_malloc(size_t size);
 #define lms_alloc(type) ((type*)lms_malloc(sizeof(type)))
