@@ -2,7 +2,6 @@
 #ifndef LMS_SHADER_H
 #define LMS_SHADER_H
 
-#include "llu.h"
 #include "gl.h"
 
 typedef struct {

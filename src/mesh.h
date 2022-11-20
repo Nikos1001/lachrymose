@@ -2,8 +2,6 @@
 #ifndef LMS_MESH_H
 #define LMS_MESH_H
 
-#include "llu.h"
-
 typedef struct {
     int dimension;
     int offset;

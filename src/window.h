@@ -1,6 +1,7 @@
 
 #ifndef LMS_WINDOW_H
 #define LMS_WINDOW_H
+
 #include <stdbool.h>
 
 typedef struct lms_window {

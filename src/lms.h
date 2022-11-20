@@ -2,7 +2,7 @@
 #ifndef LMS_LMS_H
 #define LMS_LMS_H
 
-#include "llu.h"
+#include <stdlib.h>
 
 extern void (*lms_errorCallback)(const char*);
 void lms_error(const char* fmt, ...);

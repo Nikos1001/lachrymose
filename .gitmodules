@@ -1,6 +1,3 @@
-[submodule "lib/llu"]
-	path = lib/llu
-	url = https://github.com/Nikos1001/llu.git
 [submodule "lib/glew"]
 	path = lib/glew
 	url = https://github.com/omniavinco/glew-cmake
